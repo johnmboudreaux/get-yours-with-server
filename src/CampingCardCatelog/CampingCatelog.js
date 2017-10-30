@@ -17,10 +17,6 @@ class CampingCatelog extends Component {
     this.addClick = this.addClick.bind(this);
   }
 
-  // componentWillMount() {
-  //   fetch(`/api?id=${keyword}`)
-  // }
-
   updateInputValue(event) {
     this.setState({
       inputValue: event.target.value
@@ -28,7 +24,6 @@ class CampingCatelog extends Component {
   }
 
   addClick() {
-    console.log('hi');
     this.props.actions.createCourse({
       title: this.state.inputValue
     });
@@ -46,7 +41,7 @@ class CampingCatelog extends Component {
         <h1>Camping</h1>
         {this.props.courses.map(this.courseMapping)}
         <input type={'text'} onChange={this.updateInputValue}/>
-        <button onClick={this.addClick}>Add Course</button>
+        <button onClick={this.addClick}>Add Products</button>
       </div>
     );
   }
@@ -54,7 +49,8 @@ class CampingCatelog extends Component {
 }
 
 CampingCatelog.propTypes = {
-  courses: PropTypes.array
+  courses: PropTypes.array,
+  actions: PropTypes.func
 };
 
 const mapStateToProps = (state, ownProps) => (
