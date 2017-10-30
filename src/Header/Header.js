@@ -10,11 +10,11 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header>
-        <nav>
+      <header className="main-header">
+        <nav className="header-nav">
           <ul>
             <li>
-              <Link to='/'>Home</Link>
+              <Link to='/'>Personal Recomendations</Link>
             </li>
             <li>
               <Link to='/Baby'>Baby</Link>

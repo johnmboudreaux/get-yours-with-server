@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as Actions from './Actions';
 import { Card } from '../Card/Card';
 
-class BabyCatelog extends Component {
+class Recommended extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -21,17 +21,17 @@ class BabyCatelog extends Component {
   }
 
   addClick() {
-    this.props.actions.loadBabyProducts(this.state.inputValue);
+    this.props.actions.loadRecommendedProducts(this.state.inputValue);
   }
 
-  productMapping(campingProduct, index) {
+  productMapping(recommendedProduct, index) {
     return (
       <Card
-        image={campingProduct.imageURL}
-        title={campingProduct.title}
-        description={campingProduct.description}
-        price={campingProduct.price}
-        link={campingProduct.amazonLink}
+        image={recommendedProduct.imageURL}
+        title={recommendedProduct.title}
+        description={recommendedProduct.description}
+        price={recommendedProduct.price}
+        link={recommendedProduct.amazonLink}
         key={index}
       />
     );
@@ -40,24 +40,24 @@ class BabyCatelog extends Component {
   render() {
     return (
       <div>
-        <h1>Baby</h1>
+        <h1>Recommended</h1>
         <input type={'text'} onChange={this.updateInputValue}/>
         <button onClick={this.addClick}>Add Products</button>
-        {this.props.babyProducts.map(this.productMapping)}
+        {this.props.recommendedProducts.map(this.productMapping)}
       </div>
     );
   }
 
 }
 
-BabyCatelog.propTypes = {
-  babyProducts: PropTypes.array,
+Recommended.propTypes = {
+  recommendedProducts: PropTypes.array,
   actions: PropTypes.object
 };
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    babyProducts: state.babyProducts
+    recommendedProducts: state.recommendedProducts
   };
 };
 
@@ -67,4 +67,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BabyCatelog);
+export default connect(mapStateToProps, mapDispatchToProps)(Recommended);

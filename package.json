@@ -11,7 +11,9 @@
     "build": "webpack --config ./webpack.config.dev.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "test"
+    "test": "test",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "author": "John Michael B",
   "license": "ISC",
@@ -33,10 +35,14 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.4.0",
     "eslint-watch": "^3.1.2",
+    "fetch-mock": "^5.13.1",
+    "react-test-renderer": "^16.0.0",
     "file-loader": "^0.11.2",
+    "node-sass": "^4.5.3",
     "npm-run-all": "^4.1.1",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^3.6.0",
+    "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.9.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-hot-middleware": "^2.15.0"
@@ -44,6 +50,7 @@
   "dependencies": {
     "amazon-product-api": "^0.4.4",
     "babel-polyfill": "^6.26.0",
+    "chokidar": "^1.7.0",
     "express": "^4.16.2",
     "express-cors": "0.0.3",
     "open": "0.0.5",
@@ -54,6 +61,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.1"
   }
 }

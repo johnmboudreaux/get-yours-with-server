@@ -9,12 +9,14 @@ import rootReducer from './reducers';
 import App from './App/MainApp';
 import { loadCampingProducts } from './CampingCatelog/Actions';
 import { loadBabyProducts } from './BabyCatelog/Actions';
+import { loadRecommendedProducts } from './RecommendedCatelog/Actions';
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ &&
 window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const store = createStore(rootReducer, devTools, applyMiddleware(thunk));
 store.dispatch(loadCampingProducts());
 store.dispatch(loadBabyProducts());
+store.dispatch(loadRecommendedProducts());
 
 render(
   <Provider store={store}>
