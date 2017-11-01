@@ -21,7 +21,6 @@ export const loadRecommendedProducts = () => {
         return results.json();
       })
       .then(productData => {
-        console.log(productData);
         const cleanData = productData.map((product) => {
           return cleanAmazonData(product);
         });

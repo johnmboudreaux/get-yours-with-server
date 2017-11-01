@@ -1,0 +1,80 @@
+import configureStore from 'redux-mock-store';
+import { shallow } from 'enzyme';
+import BabyCatelog from './BabyCatelog';
+import * as actions from './Actions';
+import * as reducers from './Reducer';
+import React from 'react';
+
+describe('BabyCatalog Actions', () => {
+
+  it('createBabyProduct should take and array and return an action', () => {
+    const babyProduct = [{
+      amazonLink: "https://www.amazon.com",
+      description: "prod description",
+      imageURL: "https://images",
+      price: "$9.97",
+      title: "product title"
+    }];
+
+    const expected = {
+      type: 'CREATE_BABY_PRODUCT',
+      babyProduct: [{
+        amazonLink: "https://www.amazon.com",
+        description: "prod description",
+        imageURL: "https://images",
+        price: "$9.97",
+        title: "product title"
+      }]
+    };
+
+    expect(actions.createBabyProduct(babyProduct)).toEqual(expected);
+  });
+
+  it('loadBabyProductSuccess should take and array and return an action', ()=>{
+    const babyProducts = [{
+      amazonLink: "https://www.amazon.com",
+      description: "prod description",
+      imageURL: "https://images",
+      price: "$9.97",
+      title: "product title"
+    }];
+
+    const expected = {
+      type: 'LOAD_BABY_PRODUCTS',
+      babyProducts: [{
+        amazonLink: "https://www.amazon.com",
+        description: "prod description",
+        imageURL: "https://images",
+        price: "$9.97",
+        title: "product title"
+      }]
+    };
+
+    expect(actions.loadBabyProductSuccess(babyProducts)).toEqual(expected);
+  });
+
+  it('should always match its snapshot', () => {
+    const mockStore = configureStore();
+    const initialState = {
+      campingProducts: [],
+      babyProducts:[],
+      recommendedProducts:[]
+    };
+    const store = mockStore(initialState);
+    const wrapper = shallow(<BabyCatelog
+      store = {store}
+    />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+});
+
+describe('BabyCatelog reducers', () => {
+  it('recentMovies should set default state', () => {
+    const expectation = [];
+
+    expect(reducers.recentMovies(undefined, {})).toEqual(expectation);
+  });
+
+});
