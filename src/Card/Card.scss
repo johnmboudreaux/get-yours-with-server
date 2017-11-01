@@ -1,0 +1,35 @@
+.card {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.prod-link {
+  background-color: #2685be;
+  border-radius: 5px;
+  color: white;
+  padding: .5em;
+  text-decoration: none;
+}
+
+.prod-link:focus,
+.prod-link:hover {
+  background-color: #02a9ea;
+}
+
+.prod-title {
+  font-size: 15px;
+  margin: 3px 2px 5px 2px;
+}
+
+.prod-image {
+  border: lightgrey solid 1px;
+  height: 150px;
+}
+
+.prod-description {
+  margin: 0;
+}
+
+.prod-price {
+  margin: 0;
+}

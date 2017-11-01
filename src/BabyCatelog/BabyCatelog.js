@@ -24,14 +24,14 @@ class BabyCatelog extends Component {
     this.props.actions.loadBabyProducts(this.state.inputValue);
   }
 
-  productMapping(campingProduct, index) {
+  productMapping(product, index) {
     return (
       <Card
-        image={campingProduct.imageURL}
-        title={campingProduct.title}
-        description={campingProduct.description}
-        price={campingProduct.price}
-        link={campingProduct.amazonLink}
+        image={product.imageURL}
+        title={product.title}
+        description={product.description}
+        price={product.price}
+        link={product.amazonLink}
         key={index}
       />
     );
@@ -55,9 +55,9 @@ BabyCatelog.propTypes = {
   actions: PropTypes.object
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (store, ownProps) => {
   return {
-    babyProducts: state.babyProducts
+    babyProducts: store.babyProducts
   };
 };
 

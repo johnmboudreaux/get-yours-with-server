@@ -10,6 +10,7 @@ import App from './App/MainApp';
 import { loadCampingProducts } from './CampingCatelog/Actions';
 import { loadBabyProducts } from './BabyCatelog/Actions';
 import { loadRecommendedProducts } from './RecommendedCatelog/Actions';
+import './index.scss';
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ &&
 window.__REDUX_DEVTOOLS_EXTENSION__();
 

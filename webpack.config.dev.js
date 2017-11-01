@@ -20,18 +20,13 @@ module.exports = {
         test: /\.js?$/,
         include: [path.resolve(__dirname, "src")],
         exclude: [path.resolve(__dirname, "node_modules")],
-
         loader: "babel-loader",
-        // the loader which should be applied, it'll be resolved relative to the context
-        // -loader suffix is no longer optional in webpack2 for clarity reasons
-        // see webpack 1 upgrade guide
-
         options: {
           presets: ["es2015", "react"]
         }
       }, {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }, {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader']

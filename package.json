@@ -11,7 +11,8 @@
     "build": "webpack --config ./webpack.config.dev.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "test",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
@@ -27,7 +28,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
     "enzyme": "^3.1.0",
-    "enzyme-adapter-react-16": "^1.0.1",
+    "enzyme-adapter-react-16": "^1.0.2",
     "eslint": "^4.8.0",
     "eslint-config-react-app": "^2.0.1",
     "eslint-plugin-flowtype": "^2.39.1",
@@ -36,10 +37,17 @@
     "eslint-plugin-react": "^7.4.0",
     "eslint-watch": "^3.1.2",
     "fetch-mock": "^5.13.1",
-    "react-test-renderer": "^16.0.0",
     "file-loader": "^0.11.2",
+    "i": "^0.3.6",
+    "jest": "^21.2.1",
     "node-sass": "^4.5.3",
+    "npm": "^5.5.1",
     "npm-run-all": "^4.1.1",
+    "open": "0.0.5",
+    "react-hot-loader": "^1.3.1",
+    "react-router-test-context": "^0.1.0",
+    "react-test-renderer": "^16.0.0",
+    "redux-mock-store": "^1.3.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.8.1",
@@ -53,16 +61,22 @@
     "chokidar": "^1.7.0",
     "express": "^4.16.2",
     "express-cors": "0.0.3",
-    "open": "0.0.5",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.1",
+    "pm": "^2.2.6",
     "prop-types": "^15.6.0",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "node-sass-chokidar": "0.0.3",
-    "npm-run-all": "^4.1.1"
+    "redux-thunk": "^2.2.0"
+  },
+  "jest": {
+    "setupFiles": [
+      "raf/polyfill",
+      "./src/setupTests.js"
+    ]
   }
 }

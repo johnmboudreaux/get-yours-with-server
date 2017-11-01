@@ -9,29 +9,16 @@ class Recommended extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      inputValue: ""
-    };
-    this.updateInputValue = this.updateInputValue.bind(this);
-    this.addClick = this.addClick.bind(this);
   }
 
-  updateInputValue(event) {
-    this.setState({inputValue: event.target.value});
-  }
-
-  addClick() {
-    this.props.actions.loadRecommendedProducts(this.state.inputValue);
-  }
-
-  productMapping(recommendedProduct, index) {
+  productMapping(product, index) {
     return (
       <Card
-        image={recommendedProduct.imageURL}
-        title={recommendedProduct.title}
-        description={recommendedProduct.description}
-        price={recommendedProduct.price}
-        link={recommendedProduct.amazonLink}
+        image={product.imageURL}
+        title={product.title}
+        description={product.description}
+        price={product.price}
+        link={product.amazonLink}
         key={index}
       />
     );
@@ -39,10 +26,7 @@ class Recommended extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Recommended</h1>
-        <input type={'text'} onChange={this.updateInputValue}/>
-        <button onClick={this.addClick}>Add Products</button>
+      <div className="recommended">
         {this.props.recommendedProducts.map(this.productMapping)}
       </div>
     );

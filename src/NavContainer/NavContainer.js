@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-class Header extends React.Component {
+class NavContainer extends React.Component {
 
   constructor(props, context) {
     super(props, context);
@@ -10,9 +10,9 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="main-header">
-        <nav className="header-nav">
-          <ul>
+      <aside className="main-aside">
+        <nav className="nav">
+          <ul className="link-container">
             <li>
               <Link to='/'>Personal Recomendations</Link>
             </li>
@@ -24,12 +24,12 @@ class Header extends React.Component {
             </li>
           </ul>
         </nav>
-      </header>
+      </aside>
     );
   }
 
 }
 
-Header.propTypes = {};
+NavContainer.propTypes = {};
 
-export default Header;
+export default NavContainer;
