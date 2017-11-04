@@ -13,7 +13,7 @@ class CampingCatalog extends Component {
       inputValue: ""
     };
     this.updateInputValue = this.updateInputValue.bind(this);
-    this.seachClick = this.seachClick.bind(this);
+    this.searchClick = this.searchClick.bind(this);
   }
 
   updateInputValue(event) {
@@ -22,7 +22,7 @@ class CampingCatalog extends Component {
     });
   }
 
-  seachClick() {
+  searchClick() {
     return this.props.actions.loadCampingProducts(this.state.inputValue);
   }
 

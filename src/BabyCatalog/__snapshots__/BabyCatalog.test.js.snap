@@ -29,7 +29,6 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "actions": Object {
-        "createBabyProduct": [Function],
         "loadBabyProductSuccess": [Function],
         "loadBabyProducts": [Function],
       },
@@ -73,7 +72,6 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "actions": Object {
-          "createBabyProduct": [Function],
           "loadBabyProductSuccess": [Function],
           "loadBabyProducts": [Function],
         },

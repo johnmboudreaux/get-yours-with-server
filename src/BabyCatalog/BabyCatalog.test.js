@@ -1,14 +1,51 @@
 import configureStore from 'redux-mock-store';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import BabyCatalog from './BabyCatalog';
 import * as actions from './Actions';
 import Reducer from './Reducer';
 import React from 'react';
 
+describe('BabyCatalog', () => {
+
+  it('should render an input field', () => {
+    const search = shallow(<BabyCatalog />);
+
+    expect(search.find('.location-search')).toBeDefined();
+  });
+
+  it('updateInputValue should update the input val in state', () => {
+    const initialState = '';
+    console.log(initialState);
+
+    const search = mount(<BabyCatalog
+      store = {store}
+    />);
+
+  //   console.log(search);
+    // const input = search.find('input');
+
+    // expect(search.state('')).toEqual('');
+
+    // const inputValue = { target: { value: 'Baton Rouge' } };
+
+    // input.simulate('change', inputValue);
+
+    // expect(search.state('location')).toEqual('Baton Rouge');
+  // });
+
+  // it('should render an button field', () => {
+  //   const search = shallow(<BabyCatalog />);
+  //
+  //   expect(search.find('.sub-btn')).toBeDefined();
+  // });
+
+
+});
+
 describe('BabyCatalog Actions', () => {
 
   it('createBabyProduct should take and array and return an action', () => {
-    const babyProduct = [{
+    const babyProducts = [{
       amazonLink: "https://www.amazon.com",
       description: "prod description",
       imageURL: "https://images",
@@ -17,8 +54,8 @@ describe('BabyCatalog Actions', () => {
     }];
 
     const expected = {
-      type: 'CREATE_BABY_PRODUCT',
-      babyProduct: [{
+      type: 'LOAD_BABY_PRODUCTS',
+      babyProducts: [{
         amazonLink: "https://www.amazon.com",
         description: "prod description",
         imageURL: "https://images",
@@ -27,7 +64,7 @@ describe('BabyCatalog Actions', () => {
       }]
     };
 
-    expect(actions.createBabyProduct(babyProduct)).toEqual(expected);
+    expect(actions.loadBabyProductSuccess(babyProducts)).toEqual(expected);
   });
 
   it('loadBabyProductSuccess should take and array and return an action', ()=>{
@@ -80,8 +117,8 @@ describe('BabyCatalog reducers', () => {
 
   it('CREATE_BABY_PRODUCT should add babyProducts to state', () => {
     const action = {
-      type: 'CREATE_BABY_PRODUCT',
-      babyProduct: [{
+      type: 'LOAD_BABY_PRODUCTS',
+      babyProducts: [{
         amazonLink: "https://www.amazon.com",
         description: "product description",
         imageURL: "https://images",
@@ -89,7 +126,7 @@ describe('BabyCatalog reducers', () => {
         title: 'product title'
       }]
     };
-    const expectation = action.babyProduct;
+    const expectation = action.babyProducts;
 
     expect(Reducer(undefined, action)).toEqual(expectation);
   });

@@ -1,18 +1,9 @@
 import cleanAmazonData from '../Utils/cleanAmazonData';
 
-export const createRecommendedProduct = (recommendedProduct) => {
-  return {
-    type: 'CREATE_RECOMMENDED_PRODUCT',
-    recommendedProduct
-  };
-};
-
-export const loadRecommendedProductSuccess = (recommendedProducts) => {
-  return {
-    type: 'LOAD_RECOMMENDED_PRODUCTS',
-    recommendedProducts
-  };
-};
+export const loadRecommendedProductSuccess = (recommendedProducts) => ({
+  type: 'LOAD_RECOMMENDED_PRODUCTS',
+  recommendedProducts
+});
 
 export const loadRecommendedProducts = () => {
   return (dispatch) => {
@@ -21,9 +12,8 @@ export const loadRecommendedProducts = () => {
         return results.json();
       })
       .then(productData => {
-        const cleanData = productData.map((product) => {
-          return cleanAmazonData(product);
-        });
+        let cleanData = productData.length ?
+          productData.map(product => cleanAmazonData(product)) : [];
         dispatch(loadRecommendedProductSuccess(cleanData));
       });
   };

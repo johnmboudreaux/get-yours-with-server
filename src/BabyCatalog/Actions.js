@@ -1,10 +1,5 @@
 import cleanAmazonData from '../Utils/cleanAmazonData';
 
-export const createBabyProduct = (babyProduct) => ({
-  type: 'CREATE_BABY_PRODUCT',
-  babyProduct
-});
-
 export const loadBabyProductSuccess = (babyProducts) => ({
   type: 'LOAD_BABY_PRODUCTS',
   babyProducts
@@ -17,7 +12,8 @@ export const loadBabyProducts = (keyword) => {
         return results.json();
       })
       .then(productData => {
-        let cleanData = productData.map(product => cleanAmazonData(product));
+        let cleanData = productData.length ?
+          productData.map(product => cleanAmazonData(product)) : [];
         dispatch(loadBabyProductSuccess(cleanData));
       });
   };

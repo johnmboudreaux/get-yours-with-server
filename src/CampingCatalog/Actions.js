@@ -1,12 +1,5 @@
 import cleanAmazonData from '../Utils/cleanAmazonData';
 
-export const createCampingProduct = (campingProduct) => {
-  return {
-    type: 'CREATE_CAMPING_PRODUCT',
-    campingProduct
-  };
-};
-
 export const loadCampingProductSuccess = (campingProducts) => {
   return {
     type: 'LOAD_CAMPING_PRODUCTS',
@@ -21,10 +14,8 @@ export const loadCampingProducts = (keyword) => {
         return results.json();
       })
       .then(productData => {
-        let cleanData = [];
-        productData.forEach((product) => {
-          cleanData.push(cleanAmazonData(product));
-        });
+        let cleanData = productData.length ?
+          productData.map(product => cleanAmazonData(product)) : [];
         dispatch(loadCampingProductSuccess(cleanData));
       });
   };

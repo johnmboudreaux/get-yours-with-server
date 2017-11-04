@@ -23,8 +23,12 @@ export default function(amazonData) {
     returnObject.description = amazonData.ItemAttributes[0].Feature[0];
   }
 
-  if (amazonData.OfferSummary && amazonData.OfferSummary[0].LowestNewPrice && amazonData.OfferSummary[0].LowestNewPrice[0].FormattedPrice) {
-    returnObject.price = amazonData.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
+  if (amazonData.OfferSummary && amazonData.OfferSummary[0].LowestNewPrice &&
+    amazonData.OfferSummary[0].LowestNewPrice[0].FormattedPrice) {
+    returnObject.price = amazonData
+      .OfferSummary[0]
+      .LowestNewPrice[0]
+      .FormattedPrice[0];
   }
 
   return returnObject;
