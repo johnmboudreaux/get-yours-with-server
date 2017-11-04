@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Recommended from "../RecommendedCatelog/Recommended";
-import Header from "../Header/Header";
-import CampingCatelog from "../CampingCatelog/CampingCatelog";
-import BabyCatelog from "../BabyCatelog/BabyCatelog";
+import { Route } from 'react-router-dom';
+import Recommended from "../RecommendedCatalog/Recommended";
+import NavContainer from "../NavContainer/NavContainer";
+import CampingCatalog from "../CampingCatalog/CampingCatalog";
+import BabyCatalog from "../BabyCatalog/BabyCatalog";
 
 
 class App extends Component {
   render() {
     return (
-      <div id={'main'}>
-        <Header></Header>
-        <Switch>
-          <Route exact path={'/'} component={Recommended}></Route>
-          <Route path={'/Camping'} component={CampingCatelog}></Route>
-          <Route path={'/Baby'} component={BabyCatelog}></Route>
-        </Switch>
+      <div id='main'>
+        <NavContainer></NavContainer>
+        <Route exact path={'/'} component={Recommended}></Route>
+        <Route path={'/Camping'} component={CampingCatalog}></Route>
+        <Route path={'/Baby'} component={BabyCatalog}></Route>
       </div>
     );
   }

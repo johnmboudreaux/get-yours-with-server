@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card snapshot should always match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="image-container"
+        >
+          <img
+            alt="product"
+            className="prod-image"
+            src={undefined}
+          />
+        </div>,
+        <div>
+          <h2
+            className="prod-description"
+          />
+        </div>,
+        <div>
+          <h3
+            className="prod-price"
+          />
+        </div>,
+        <div
+          className="link-container2"
+        >
+          <a
+            className="prod-link"
+            href={undefined}
+          >
+            See On Amazon
+          </a>
+        </div>,
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            alt="product"
+            className="prod-image"
+            src={undefined}
+          />,
+          "className": "image-container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "product",
+            "className": "prod-image",
+            "src": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h2
+            className="prod-description"
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "prod-description",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "h2",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h3
+            className="prod-price"
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "prod-price",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "h3",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <a
+            className="prod-link"
+            href={undefined}
+          >
+            See On Amazon
+          </a>,
+          "className": "link-container2",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "See On Amazon",
+            "className": "prod-link",
+            "href": undefined,
+          },
+          "ref": null,
+          "rendered": "See On Amazon",
+          "type": "a",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="image-container"
+          >
+            <img
+              alt="product"
+              className="prod-image"
+              src={undefined}
+            />
+          </div>,
+          <div>
+            <h2
+              className="prod-description"
+            />
+          </div>,
+          <div>
+            <h3
+              className="prod-price"
+            />
+          </div>,
+          <div
+            className="link-container2"
+          >
+            <a
+              className="prod-link"
+              href={undefined}
+            >
+              See On Amazon
+            </a>
+          </div>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="product"
+              className="prod-image"
+              src={undefined}
+            />,
+            "className": "image-container",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "product",
+              "className": "prod-image",
+              "src": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h2
+              className="prod-description"
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "prod-description",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h2",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h3
+              className="prod-price"
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "prod-price",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h3",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <a
+              className="prod-link"
+              href={undefined}
+            >
+              See On Amazon
+            </a>,
+            "className": "link-container2",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "See On Amazon",
+              "className": "prod-link",
+              "href": undefined,
+            },
+            "ref": null,
+            "rendered": "See On Amazon",
+            "type": "a",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

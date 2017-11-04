@@ -7,9 +7,10 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import App from './App/MainApp';
-import { loadCampingProducts } from './CampingCatelog/Actions';
-import { loadBabyProducts } from './BabyCatelog/Actions';
-import { loadRecommendedProducts } from './RecommendedCatelog/Actions';
+import { loadCampingProducts } from './CampingCatalog/Actions';
+import { loadBabyProducts } from './BabyCatalog/Actions';
+import { loadRecommendedProducts } from './RecommendedCatalog/Actions';
+import './index.scss';
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ &&
 window.__REDUX_DEVTOOLS_EXTENSION__();
 

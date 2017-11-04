@@ -1,13 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Card = (props) => {
   return (
-    <div className="card">
-      <img src={props.image} alt="product"/>
-      <h2>{props.title}</h2>
-      <p>{props.description}</p>
-      <h3>{props.price}</h3>
-      <a href={props.link}>See On Amazon</a>
-    </div>
+    <article className="card">
+      <div className="image-container">
+        <img className="prod-image" src={props.image} alt="product"/>
+      </div>
+      <div>
+        <h2 className="prod-description">{props.title}</h2>
+      </div>
+      <div>
+        <h3 className="prod-price">{props.price}</h3>
+      </div>
+      <div className="link-container2">
+        <a className="prod-link" href={props.link}>See On Amazon</a>
+      </div>
+    </article>
   );
+};
+
+Card.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  price: PropTypes.string,
+  link:PropTypes.string
 };

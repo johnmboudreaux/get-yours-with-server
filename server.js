@@ -1,3 +1,4 @@
+const recommendedProducts = require('./Server/RecommendedProducts');
 const path = require('path');
 const express = require('express');
 const cors = require('express-cors');
@@ -6,11 +7,7 @@ const app = express();
 const open = require('open');
 const keys = require('./keys/apiKey');
 const amazon = require('amazon-product-api');
-const client = amazon.createClient({
-  awsId: keys.databaseID,
-  awsSecret: keys.databaseKey,
-  awsTag: "jhnbdrx-20"
-});
+const client = amazon.createClient({awsId: keys.databaseID, awsSecret: keys.databaseKey, awsTag: "jhnbdrx-20"});
 
 app.use(cors());
 
@@ -38,6 +35,20 @@ app.get('/api', function(req, res) {
   client.itemSearch({
     SearchIndex: req.query.category,
     Keywords: req.query.keyword,
+    responseGroup: 'ItemAttributes,Offers,Images'
+  }, function(error, results, response) {
+    if (error) {
+      res.json(error);
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+app.get('/api/recommended', function(req, res) {
+  client.itemLookup({
+    idType: 'ASIN',
+    itemId: recommendedProducts,
     responseGroup: 'ItemAttributes,Offers,Images'
   }, function(error, results, response) {
     if (error) {
