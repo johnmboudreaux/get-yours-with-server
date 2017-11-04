@@ -64,8 +64,8 @@ export class CampingCatalog extends Component {
 }
 
 CampingCatalog.propTypes = {
-  campingProducts: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  campingProducts: PropTypes.array,
+  actions: PropTypes.object
 };
 
 const mapStateToProps = (state, ownProps) => {
