@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as Actions from './Actions';
 import { Card } from '../Card/Card';
 
-class CampingCatelog extends Component {
+class CampingCatalog extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -13,7 +13,7 @@ class CampingCatelog extends Component {
       inputValue: ""
     };
     this.updateInputValue = this.updateInputValue.bind(this);
-    this.addClick = this.addClick.bind(this);
+    this.seachClick = this.seachClick.bind(this);
   }
 
   updateInputValue(event) {
@@ -22,7 +22,7 @@ class CampingCatelog extends Component {
     });
   }
 
-  addClick() {
+  seachClick() {
     return this.props.actions.loadCampingProducts(this.state.inputValue);
   }
 
@@ -42,16 +42,28 @@ class CampingCatelog extends Component {
   render() {
     return (
       <div>
-        <input type={'text'} onChange={this.updateInputValue}/>
-        <button onClick={this.addClick}>Add Products</button>
-        {this.props.campingProducts.map(this.productMapping)}
+        <header className="header-div">
+          <input
+            className="header-input"
+            type={'text'}
+            placeholder="Search For Camping Products Here"
+            onChange={this.updateInputValue}/>
+          <button
+            className="header-button"
+            onClick={this.searchClick}>
+            Search Baby Products
+          </button>
+        </header>
+        <div className="baby-catalog">
+          {this.props.campingProducts.map(this.productMapping)}
+        </div>
       </div>
     );
   }
 
 }
 
-CampingCatelog.propTypes = {
+CampingCatalog.propTypes = {
   campingProducts: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 };
@@ -68,4 +80,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CampingCatelog);
+export default connect(mapStateToProps, mapDispatchToProps)(CampingCatalog);

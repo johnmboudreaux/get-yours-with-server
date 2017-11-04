@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as Actions from './Actions';
 import { Card } from '../Card/Card';
 
-class BabyCatelog extends Component {
+class BabyCatalog extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -13,14 +13,14 @@ class BabyCatelog extends Component {
       inputValue: ""
     };
     this.updateInputValue = this.updateInputValue.bind(this);
-    this.addClick = this.addClick.bind(this);
+    this.searchClick = this.searchClick.bind(this);
   }
 
   updateInputValue(event) {
     this.setState({inputValue: event.target.value});
   }
 
-  addClick() {
+  searchClick() {
     this.props.actions.loadBabyProducts(this.state.inputValue);
   }
 
@@ -40,17 +40,28 @@ class BabyCatelog extends Component {
   render() {
     return (
       <div>
-        <h1>Baby</h1>
-        <input type={'text'} onChange={this.updateInputValue}/>
-        <button onClick={this.addClick}>Add Products</button>
-        {this.props.babyProducts.map(this.productMapping)}
+        <header className="header-div">
+          <input
+            className="header-input"
+            type={'text'}
+            placeholder="Search For Baby Products Here"
+            onChange={this.updateInputValue}/>
+          <button
+            className="header-button"
+            onClick={this.searchClick}>
+            Search Baby Products
+          </button>
+        </header>
+        <div className="baby-catalog">
+          {this.props.babyProducts.map(this.productMapping)}
+        </div>
       </div>
     );
   }
 
 }
 
-BabyCatelog.propTypes = {
+BabyCatalog.propTypes = {
   babyProducts: PropTypes.array,
   actions: PropTypes.object
 };
@@ -67,4 +78,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BabyCatelog);
+export default connect(mapStateToProps, mapDispatchToProps)(BabyCatalog);

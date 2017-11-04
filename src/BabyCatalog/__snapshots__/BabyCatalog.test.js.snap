@@ -4,7 +4,7 @@ exports[`BabyCatalog Actions should always match its snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(BabyCatelog)
+  Symbol(enzyme.__unrendered__): <Connect(BabyCatalog)
     store={
       Object {
         "clearActions": [Function],

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class NavContainer extends React.Component {
@@ -11,15 +10,18 @@ class NavContainer extends React.Component {
   render() {
     return (
       <aside className="main-aside">
+        <div className="logo">
+          LOGO
+        </div>
         <nav className="nav">
           <ul className="link-container">
-            <li>
+            <li className="nav-links">
               <Link to='/'>Personal Recomendations</Link>
             </li>
-            <li>
+            <li className="nav-links">
               <Link to='/Baby'>Baby</Link>
             </li>
-            <li>
+            <li className="nav-links">
               <Link to='/Camping'>Camping</Link>
             </li>
           </ul>

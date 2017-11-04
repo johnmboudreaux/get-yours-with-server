@@ -1,0 +1,38 @@
+.header-div {
+  height: 40px;
+  margin: 0;
+  padding: 0
+}
+
+.header-input {
+  font-size: .90em;
+  height: 40px;
+  width: 69%;
+}
+
+.header-button {
+  background-color: #02a9ea;
+  font: bold 11px Arial;
+  font-size: 16px;
+  height: 48px;
+  width: 30%;
+  margin-left: 1px;
+}
+
+.header-button:focus,
+.header-button:hover {
+  background-color: #171b1e;
+  color: #02a9ea;
+}
+
+.baby-catalog {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 34px;
+}
+
+.header-div,
+.baby-catalog {
+  background-image: url('./assets/grey-cross-pattern.jpg');
+}

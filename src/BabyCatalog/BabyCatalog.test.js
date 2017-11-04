@@ -1,8 +1,8 @@
 import configureStore from 'redux-mock-store';
 import { shallow } from 'enzyme';
-import BabyCatelog from './BabyCatelog';
+import BabyCatalog from './BabyCatalog';
 import * as actions from './Actions';
-import * as reducers from './Reducer';
+import Reducer from './Reducer';
 import React from 'react';
 
 describe('BabyCatalog Actions', () => {
@@ -61,7 +61,7 @@ describe('BabyCatalog Actions', () => {
       recommendedProducts:[]
     };
     const store = mockStore(initialState);
-    const wrapper = shallow(<BabyCatelog
+    const wrapper = shallow(<BabyCatalog
       store = {store}
     />);
 
@@ -70,11 +70,30 @@ describe('BabyCatalog Actions', () => {
 
 });
 
-describe('BabyCatelog reducers', () => {
-  it('recentMovies should set default state', () => {
+describe('BabyCatalog reducers', () => {
+
+  it('Reducer should set default state', () => {
     const expectation = [];
 
-    expect(reducers.recentMovies(undefined, {})).toEqual(expectation);
+    expect(Reducer(undefined, {})).toEqual(expectation);
+  });
+
+  it('CREATE_BABY_PRODUCT should add babyProducts to state', () => {
+    const action = {
+      type: 'CREATE_BABY_PRODUCT',
+      babyProduct: [{
+        amazonLink: "https://www.amazon.com",
+        description: "product description",
+        imageURL: "https://images",
+        price: "$9.97",
+        title: 'product title'
+      }]
+    };
+    const expectation = action.babyProduct;
+
+    console.log('test', Reducer(undefined, action));
+
+    expect(action.babyProduct).toEqual(expectation);
   });
 
 });

@@ -1,7 +1,22 @@
-.main-aside {
-
-}
-
 .link-container {
   margin: 0;
+  padding: 0;
+  color: #02a9ea;
+}
+
+.main-aside {
+  background-color: #171b1e;
+}
+
+.nav-links {
+  border-bottom: 1px solid #333333;
+  color: #02a9ea;
+  font: bold 11px Arial;
+  font-size: 16px;
+  padding: 20px 70px 25px 35px;
+  list-style: none;
+}
+
+ul.link-container li.nav-links a {
+  color: #02a9ea;
 }

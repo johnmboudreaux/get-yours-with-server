@@ -8,7 +8,7 @@ export const Card = (props) => {
         <img className="prod-image" src={props.image} alt="product"/>
       </div>
       <div>
-        <h2 className="prod-description">{props.description}</h2>
+        <h2 className="prod-description">{props.title}</h2>
       </div>
       <div>
         <h3 className="prod-price">{props.price}</h3>

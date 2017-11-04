@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import Recommended from "../RecommendedCatelog/Recommended";
+import Recommended from "../RecommendedCatalog/Recommended";
 import NavContainer from "../NavContainer/NavContainer";
-import CampingCatelog from "../CampingCatelog/CampingCatelog";
-import BabyCatelog from "../BabyCatelog/BabyCatelog";
+import CampingCatalog from "../CampingCatalog/CampingCatalog";
+import BabyCatalog from "../BabyCatalog/BabyCatalog";
 
 
 class App extends Component {
@@ -12,8 +12,8 @@ class App extends Component {
       <div id='main'>
         <NavContainer></NavContainer>
         <Route exact path={'/'} component={Recommended}></Route>
-        <Route path={'/Camping'} component={CampingCatelog}></Route>
-        <Route path={'/Baby'} component={BabyCatelog}></Route>
+        <Route path={'/Camping'} component={CampingCatalog}></Route>
+        <Route path={'/Baby'} component={BabyCatalog}></Route>
       </div>
     );
   }
