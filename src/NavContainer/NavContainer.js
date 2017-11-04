@@ -11,7 +11,7 @@ class NavContainer extends React.Component {
     return (
       <aside className="main-aside">
         <div className="logo">
-          LOGO
+          Get Yours
         </div>
         <nav className="nav">
           <ul className="link-container">

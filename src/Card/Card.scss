@@ -2,6 +2,7 @@
   background-color: #fff;
   border: 2px solid #02a9ea;
   border-radius: 12px;
+  box-shadow: 3px 3px 5px #171b1e;
   float: left;
   margin-bottom: 10px;
   text-align: center;
@@ -14,10 +15,7 @@
 
 .prod-link {
   background-color: #02a9ea;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  border-radius: 0 0 12px 12px;
   color: #171b1e;
   font: bold 11px Arial;
   font-size: 16px;
