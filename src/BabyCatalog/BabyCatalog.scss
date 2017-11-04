@@ -36,3 +36,9 @@
 .baby-catalog {
   background-image: url('./assets/grey-cross-pattern.jpg');
 }
+
+@media (min-width: 950px) {
+  .header-div {
+    height: 200px;
+  }
+}

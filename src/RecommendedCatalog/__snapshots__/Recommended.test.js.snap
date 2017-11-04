@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BabyCatalog Actions BabyCatalog should always match its snapshot 1`] = `
+exports[`RecommendedCatalog Actions RecommendedCatalog should always match its snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(BabyCatalog)
+  Symbol(enzyme.__unrendered__): <Connect(Recommended)
     store={
       Object {
         "clearActions": [Function],
@@ -29,10 +29,10 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "actions": Object {
-        "loadBabyProductSuccess": [Function],
-        "loadBabyProducts": [Function],
+        "loadRecommendedProductSuccess": [Function],
+        "loadRecommendedProducts": [Function],
       },
-      "babyProducts": undefined,
+      "recommendedProducts": undefined,
       "store": Object {
         "clearActions": [Function],
         "dispatch": [Function],
@@ -72,10 +72,10 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "actions": Object {
-          "loadBabyProductSuccess": [Function],
-          "loadBabyProducts": [Function],
+          "loadRecommendedProductSuccess": [Function],
+          "loadRecommendedProducts": [Function],
         },
-        "babyProducts": undefined,
+        "recommendedProducts": undefined,
         "store": Object {
           "clearActions": [Function],
           "dispatch": [Function],

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as Actions from './Actions';
 import { Card } from '../Card/Card';
 
-class CampingCatalog extends Component {
+export class CampingCatalog extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -13,7 +13,7 @@ class CampingCatalog extends Component {
       inputValue: ""
     };
     this.updateInputValue = this.updateInputValue.bind(this);
-    this.seachClick = this.seachClick.bind(this);
+    this.searchClick = this.searchClick.bind(this);
   }
 
   updateInputValue(event) {
@@ -22,7 +22,7 @@ class CampingCatalog extends Component {
     });
   }
 
-  seachClick() {
+  searchClick() {
     return this.props.actions.loadCampingProducts(this.state.inputValue);
   }
 
@@ -64,8 +64,8 @@ class CampingCatalog extends Component {
 }
 
 CampingCatalog.propTypes = {
-  campingProducts: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  campingProducts: PropTypes.array,
+  actions: PropTypes.object
 };
 
 const mapStateToProps = (state, ownProps) => {

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as Actions from './Actions';
 import { Card } from '../Card/Card';
 
-class Recommended extends Component {
+export class Recommended extends Component {
 
   constructor(props, context) {
     super(props, context);
