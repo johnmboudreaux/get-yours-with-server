@@ -17,216 +17,21 @@ ShallowWrapper {
     "key": null,
     "nodeType": "host",
     "props": Object {
-      "children": <nav
-        className="nav"
-      >
-        <ul
-          className="link-container"
+      "children": Array [
+        <div
+          className="logo"
         >
-          <li>
-            <Link
-              replace={false}
-              to="/"
-            >
-              Personal Recomendations
-            </Link>
-          </li>
-          <li>
-            <Link
-              replace={false}
-              to="/Baby"
-            >
-              Baby
-            </Link>
-          </li>
-          <li>
-            <Link
-              replace={false}
-              to="/Camping"
-            >
-              Camping
-            </Link>
-          </li>
-        </ul>
-      </nav>,
-      "className": "main-aside",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": null,
-      "nodeType": "host",
-      "props": Object {
-        "children": <ul
-          className="link-container"
-        >
-          <li>
-            <Link
-              replace={false}
-              to="/"
-            >
-              Personal Recomendations
-            </Link>
-          </li>
-          <li>
-            <Link
-              replace={false}
-              to="/Baby"
-            >
-              Baby
-            </Link>
-          </li>
-          <li>
-            <Link
-              replace={false}
-              to="/Camping"
-            >
-              Camping
-            </Link>
-          </li>
-        </ul>,
-        "className": "nav",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": null,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <li>
-              <Link
-                replace={false}
-                to="/"
-              >
-                Personal Recomendations
-              </Link>
-            </li>,
-            <li>
-              <Link
-                replace={false}
-                to="/Baby"
-              >
-                Baby
-              </Link>
-            </li>,
-            <li>
-              <Link
-                replace={false}
-                to="/Camping"
-              >
-                Camping
-              </Link>
-            </li>,
-          ],
-          "className": "link-container",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "host",
-            "props": Object {
-              "children": <Link
-                replace={false}
-                to="/"
-              >
-                Personal Recomendations
-              </Link>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": null,
-              "nodeType": "class",
-              "props": Object {
-                "children": "Personal Recomendations",
-                "replace": false,
-                "to": "/",
-              },
-              "ref": null,
-              "rendered": "Personal Recomendations",
-              "type": [Function],
-            },
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "host",
-            "props": Object {
-              "children": <Link
-                replace={false}
-                to="/Baby"
-              >
-                Baby
-              </Link>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": null,
-              "nodeType": "class",
-              "props": Object {
-                "children": "Baby",
-                "replace": false,
-                "to": "/Baby",
-              },
-              "ref": null,
-              "rendered": "Baby",
-              "type": [Function],
-            },
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": null,
-            "nodeType": "host",
-            "props": Object {
-              "children": <Link
-                replace={false}
-                to="/Camping"
-              >
-                Camping
-              </Link>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": null,
-              "nodeType": "class",
-              "props": Object {
-                "children": "Camping",
-                "replace": false,
-                "to": "/Camping",
-              },
-              "ref": null,
-              "rendered": "Camping",
-              "type": [Function],
-            },
-            "type": "li",
-          },
-        ],
-        "type": "ul",
-      },
-      "type": "nav",
-    },
-    "type": "aside",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": null,
-      "nodeType": "host",
-      "props": Object {
-        "children": <nav
+          Get Yours
+        </div>,
+        <nav
           className="nav"
         >
           <ul
             className="link-container"
           >
-            <li>
+            <li
+              className="nav-links"
+            >
               <Link
                 replace={false}
                 to="/"
@@ -234,7 +39,9 @@ ShallowWrapper {
                 Personal Recomendations
               </Link>
             </li>
-            <li>
+            <li
+              className="nav-links"
+            >
               <Link
                 replace={false}
                 to="/Baby"
@@ -242,7 +49,9 @@ ShallowWrapper {
                 Baby
               </Link>
             </li>
-            <li>
+            <li
+              className="nav-links"
+            >
               <Link
                 replace={false}
                 to="/Camping"
@@ -252,10 +61,24 @@ ShallowWrapper {
             </li>
           </ul>
         </nav>,
-        "className": "main-aside",
+      ],
+      "className": "main-aside",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Get Yours",
+          "className": "logo",
+        },
+        "ref": null,
+        "rendered": "Get Yours",
+        "type": "div",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": null,
         "nodeType": "host",
@@ -263,7 +86,9 @@ ShallowWrapper {
           "children": <ul
             className="link-container"
           >
-            <li>
+            <li
+              className="nav-links"
+            >
               <Link
                 replace={false}
                 to="/"
@@ -271,7 +96,9 @@ ShallowWrapper {
                 Personal Recomendations
               </Link>
             </li>
-            <li>
+            <li
+              className="nav-links"
+            >
               <Link
                 replace={false}
                 to="/Baby"
@@ -279,7 +106,9 @@ ShallowWrapper {
                 Baby
               </Link>
             </li>
-            <li>
+            <li
+              className="nav-links"
+            >
               <Link
                 replace={false}
                 to="/Camping"
@@ -297,7 +126,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <li>
+              <li
+                className="nav-links"
+              >
                 <Link
                   replace={false}
                   to="/"
@@ -305,7 +136,9 @@ ShallowWrapper {
                   Personal Recomendations
                 </Link>
               </li>,
-              <li>
+              <li
+                className="nav-links"
+              >
                 <Link
                   replace={false}
                   to="/Baby"
@@ -313,7 +146,9 @@ ShallowWrapper {
                   Baby
                 </Link>
               </li>,
-              <li>
+              <li
+                className="nav-links"
+              >
                 <Link
                   replace={false}
                   to="/Camping"
@@ -337,6 +172,7 @@ ShallowWrapper {
                 >
                   Personal Recomendations
                 </Link>,
+                "className": "nav-links",
               },
               "ref": null,
               "rendered": Object {
@@ -365,6 +201,7 @@ ShallowWrapper {
                 >
                   Baby
                 </Link>,
+                "className": "nav-links",
               },
               "ref": null,
               "rendered": Object {
@@ -393,6 +230,7 @@ ShallowWrapper {
                 >
                   Camping
                 </Link>,
+                "className": "nav-links",
               },
               "ref": null,
               "rendered": Object {
@@ -415,6 +253,252 @@ ShallowWrapper {
         },
         "type": "nav",
       },
+    ],
+    "type": "aside",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="logo"
+          >
+            Get Yours
+          </div>,
+          <nav
+            className="nav"
+          >
+            <ul
+              className="link-container"
+            >
+              <li
+                className="nav-links"
+              >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  Personal Recomendations
+                </Link>
+              </li>
+              <li
+                className="nav-links"
+              >
+                <Link
+                  replace={false}
+                  to="/Baby"
+                >
+                  Baby
+                </Link>
+              </li>
+              <li
+                className="nav-links"
+              >
+                <Link
+                  replace={false}
+                  to="/Camping"
+                >
+                  Camping
+                </Link>
+              </li>
+            </ul>
+          </nav>,
+        ],
+        "className": "main-aside",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Get Yours",
+            "className": "logo",
+          },
+          "ref": null,
+          "rendered": "Get Yours",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul
+              className="link-container"
+            >
+              <li
+                className="nav-links"
+              >
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  Personal Recomendations
+                </Link>
+              </li>
+              <li
+                className="nav-links"
+              >
+                <Link
+                  replace={false}
+                  to="/Baby"
+                >
+                  Baby
+                </Link>
+              </li>
+              <li
+                className="nav-links"
+              >
+                <Link
+                  replace={false}
+                  to="/Camping"
+                >
+                  Camping
+                </Link>
+              </li>
+            </ul>,
+            "className": "nav",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <li
+                  className="nav-links"
+                >
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    Personal Recomendations
+                  </Link>
+                </li>,
+                <li
+                  className="nav-links"
+                >
+                  <Link
+                    replace={false}
+                    to="/Baby"
+                  >
+                    Baby
+                  </Link>
+                </li>,
+                <li
+                  className="nav-links"
+                >
+                  <Link
+                    replace={false}
+                    to="/Camping"
+                  >
+                    Camping
+                  </Link>
+                </li>,
+              ],
+              "className": "link-container",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Link
+                    replace={false}
+                    to="/"
+                  >
+                    Personal Recomendations
+                  </Link>,
+                  "className": "nav-links",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Personal Recomendations",
+                    "replace": false,
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Personal Recomendations",
+                  "type": [Function],
+                },
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Link
+                    replace={false}
+                    to="/Baby"
+                  >
+                    Baby
+                  </Link>,
+                  "className": "nav-links",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Baby",
+                    "replace": false,
+                    "to": "/Baby",
+                  },
+                  "ref": null,
+                  "rendered": "Baby",
+                  "type": [Function],
+                },
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Link
+                    replace={false}
+                    to="/Camping"
+                  >
+                    Camping
+                  </Link>,
+                  "className": "nav-links",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Camping",
+                    "replace": false,
+                    "to": "/Camping",
+                  },
+                  "ref": null,
+                  "rendered": "Camping",
+                  "type": [Function],
+                },
+                "type": "li",
+              },
+            ],
+            "type": "ul",
+          },
+          "type": "nav",
+        },
+      ],
       "type": "aside",
     },
   ],

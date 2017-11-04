@@ -1,15 +1,11 @@
 import cleanAmazonData from '../Utils/cleanAmazonData';
 
-export const createBabyProduct = (babyProduct) => (
-console.log('cbpAction',babyProduct),
-  {
+export const createBabyProduct = (babyProduct) => ({
   type: 'CREATE_BABY_PRODUCT',
   babyProduct
 });
 
-export const loadBabyProductSuccess = (babyProducts) => (
-console.log('lbpsAction', babyProducts),
-  {
+export const loadBabyProductSuccess = (babyProducts) => ({
   type: 'LOAD_BABY_PRODUCTS',
   babyProducts
 });
@@ -21,11 +17,7 @@ export const loadBabyProducts = (keyword) => {
         return results.json();
       })
       .then(productData => {
-        let cleanData = [];
-        productData.forEach((product) => {
-          cleanData.push(cleanAmazonData(product));
-          console.log('clean', cleanData);
-        });
+        let cleanData = productData.map(product => cleanAmazonData(product));
         dispatch(loadBabyProductSuccess(cleanData));
       });
   };

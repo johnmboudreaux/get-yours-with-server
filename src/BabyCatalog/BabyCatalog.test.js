@@ -53,7 +53,7 @@ describe('BabyCatalog Actions', () => {
     expect(actions.loadBabyProductSuccess(babyProducts)).toEqual(expected);
   });
 
-  it('should always match its snapshot', () => {
+  it('BabyCatalog should always match its snapshot', () => {
     const mockStore = configureStore();
     const initialState = {
       campingProducts: [],
@@ -91,9 +91,7 @@ describe('BabyCatalog reducers', () => {
     };
     const expectation = action.babyProduct;
 
-    console.log('test', Reducer(undefined, action));
-
-    expect(action.babyProduct).toEqual(expectation);
+    expect(Reducer(undefined, action)).toEqual(expectation);
   });
 
 });
