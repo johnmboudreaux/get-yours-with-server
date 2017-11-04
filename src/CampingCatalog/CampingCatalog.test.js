@@ -44,11 +44,11 @@ describe('CampingCatalog', () => {
 
     expect(search.state().inputValue).toEqual('');
 
-    const inputValue = { target: { value: 'Baton Rouge' } };
+    const inputValue = { target: { value: 'Fire Starter' } };
 
     input.simulate('change', inputValue);
 
-    expect(search.state().inputValue).toEqual('Baton Rouge');
+    expect(search.state().inputValue).toEqual('Fire Starter');
   });
 
   it('should render an button field', () => {
@@ -72,7 +72,6 @@ describe('CampingCatalog', () => {
     input.simulate('click');
     expect(actions.loadCampingProducts).toHaveBeenCalled();
   });
-
 
 });
 

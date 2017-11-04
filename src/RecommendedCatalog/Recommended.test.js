@@ -1,6 +1,6 @@
 import configureStore from 'redux-mock-store';
-import { shallow, mount } from 'enzyme';
-import RecommendedCatalogContainer from './Recommended';
+import { shallow } from 'enzyme';
+import RecommendedCatalog from './Recommended';
 import * as actions from './Actions';
 import Reducer from './Reducers';
 import React from 'react';
@@ -21,21 +21,11 @@ describe('RecommendedCatalog', () => {
   it('should render a div with class "recommended"', () => {
 
     const search = shallow(
-      <RecommendedCatalogContainer  store={store} />
+      <RecommendedCatalog  store={store} />
     );
 
     expect(search.find('.recommended')).toBeDefined();
   });
-
-  it('productMapping should retrun a card', () => {
-
-    const wrapper = shallow(
-      <RecommendedCatalogContainer  store={store} />
-    );
-
-    expect();
-  });
-
 });
 
 describe('RecommendedCatalog Actions', () => {
@@ -92,7 +82,7 @@ describe('RecommendedCatalog Actions', () => {
 
   it('RecommendedCatalog should always match its snapshot', () => {
 
-    const wrapper = shallow(<RecommendedCatalogContainer
+    const wrapper = shallow(<RecommendedCatalog
       store = {store}
     />);
 
