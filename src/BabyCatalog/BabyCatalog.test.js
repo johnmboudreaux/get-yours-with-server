@@ -1,43 +1,77 @@
 import configureStore from 'redux-mock-store';
 import { shallow, mount } from 'enzyme';
-import BabyCatalog from './BabyCatalog';
+import BabyCatalogContainer, { BabyCatalog } from './BabyCatalog';
 import * as actions from './Actions';
 import Reducer from './Reducer';
 import React from 'react';
 
+const middleware = [];
+const mockStore = configureStore(middleware);
+const initialState = {
+  amazonLink: "https://www.amazon.com",
+  description: "prod description",
+  imageURL: "https://images",
+  price: "$9.97",
+  title: "product title"
+};
+const store = mockStore(initialState);
+
 describe('BabyCatalog', () => {
 
   it('should render an input field', () => {
-    const search = shallow(<BabyCatalog />);
 
-    expect(search.find('.location-search')).toBeDefined();
+    const search = shallow(
+      <BabyCatalogContainer  store={store} />
+    );
+
+    expect(search.find('.header-input')).toBeDefined();
   });
 
   it('updateInputValue should update the input val in state', () => {
-    const initialState = '';
-    console.log(initialState);
+    const mockData = [{
+      amazonLink: "https://www.amazon.com",
+      description: "prod description",
+      imageURL: "https://images",
+      price: "$9.97",
+      title: "product title"
+    }];
+    const search = mount(
+      <BabyCatalog
+        babyProducts = {mockData}
+      />);
 
-    const search = mount(<BabyCatalog
-      store = {store}
-    />);
+    const input = search.find('input');
 
-  //   console.log(search);
-    // const input = search.find('input');
+    expect(search.state().inputValue).toEqual('');
 
-    // expect(search.state('')).toEqual('');
+    const inputValue = { target: { value: 'Baton Rouge' } };
 
-    // const inputValue = { target: { value: 'Baton Rouge' } };
+    input.simulate('change', inputValue);
 
-    // input.simulate('change', inputValue);
+    expect(search.state().inputValue).toEqual('Baton Rouge');
+  });
 
-    // expect(search.state('location')).toEqual('Baton Rouge');
-  // });
+  it('should render an button field', () => {
+    const search = shallow(<BabyCatalogContainer store={store} />);
 
-  // it('should render an button field', () => {
-  //   const search = shallow(<BabyCatalog />);
-  //
-  //   expect(search.find('.sub-btn')).toBeDefined();
-  // });
+    expect(search.find('.sub-btn')).toBeDefined();
+  });
+
+  it('searchClick shold fire an action', () => {
+    const actions = {
+      loadBabyProducts: jest.fn()
+    };
+
+    const search = mount(
+      <BabyCatalog
+        babyProducts = {[]}
+        actions = {actions}
+      />);
+
+    const input = search.find('button');
+    input.simulate('click');
+    expect(actions.loadBabyProducts).toHaveBeenCalled();
+  });
 
 
 });
@@ -91,14 +125,8 @@ describe('BabyCatalog Actions', () => {
   });
 
   it('BabyCatalog should always match its snapshot', () => {
-    const mockStore = configureStore();
-    const initialState = {
-      campingProducts: [],
-      babyProducts:[],
-      recommendedProducts:[]
-    };
-    const store = mockStore(initialState);
-    const wrapper = shallow(<BabyCatalog
+
+    const wrapper = shallow(<BabyCatalogContainer
       store = {store}
     />);
 

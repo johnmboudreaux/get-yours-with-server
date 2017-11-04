@@ -32,7 +32,7 @@ ShallowWrapper {
         "loadBabyProductSuccess": [Function],
         "loadBabyProducts": [Function],
       },
-      "babyProducts": Array [],
+      "babyProducts": undefined,
       "store": Object {
         "clearActions": [Function],
         "dispatch": [Function],
@@ -75,7 +75,7 @@ ShallowWrapper {
           "loadBabyProductSuccess": [Function],
           "loadBabyProducts": [Function],
         },
-        "babyProducts": Array [],
+        "babyProducts": undefined,
         "store": Object {
           "clearActions": [Function],
           "dispatch": [Function],
