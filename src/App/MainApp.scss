@@ -11,3 +11,32 @@ body {
   display: flex;
   flex-direction: row;
 }
+
+
+
+@media all and (max-width: 700px) {
+  .header-input {
+    margin: 3px 0 0 3px;
+  }
+
+  .header-button {
+    margin: 3px 3px 0 0;
+  }
+
+  .baby-catalog,
+ {
+    border-left: 2px solid #02a9ea;
+    border-right: 2px solid #02a9ea;
+    border-bottom: 2px solid #02a9ea;
+  }
+
+  .header-div {
+    border-left: 2px solid #02a9ea;
+    border-right: 2px solid #02a9ea;
+    border-top: 2px solid #02a9ea;
+  }
+
+  .main-aside {
+    display: none;
+  }
+}
