@@ -12,7 +12,9 @@ body {
   flex-direction: row;
 }
 
-
+.show-menu-button {
+  display: none;
+}
 
 @media all and (max-width: 700px) {
   .header-input {
@@ -31,12 +33,42 @@ body {
   }
 
   .header-div {
+    position: fixed;
+    width: 100vw;
     border-left: 2px solid #02a9ea;
     border-right: 2px solid #02a9ea;
     border-top: 2px solid #02a9ea;
   }
 
   .main-aside {
-    display: none;
+    left: -235px;
+    top: 0;
+    position: fixed;
+    width: 235px;
+    height: 100vh;
+    transition: all .75s ease-in-out;
+    z-index: 3;
+  }
+
+  .main-aside.menu-showing {
+    left: 0;
+  }
+
+  .show-menu-button {
+    display: block;
+    position: absolute;
+    top: 80px;
+    right: -50px;
+    transform: rotate(90deg);
+  }
+
+  .main-aside.menu-showing .show-menu-button {
+    right: -26px;
+    top: 50vh;
+  }
+
+  #main .baby-catalog,
+  #main .camping-catalog {
+    padding-top: 80px;
   }
 }

@@ -54,7 +54,7 @@ export class CampingCatalog extends Component {
             Search Baby Products
           </button>
         </header>
-        <div className="baby-catalog">
+        <div className="camping-catalog">
           {this.props.campingProducts.map(this.productMapping)}
         </div>
       </div>

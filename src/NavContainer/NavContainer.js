@@ -5,14 +5,30 @@ class NavContainer extends React.Component {
 
   constructor(props, context) {
     super(props, context);
+    this.state = {
+      menuShowing: false
+    };
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu() {
+    this.setState({
+      menuShowing: !this.state.menuShowing
+    });
   }
 
   render() {
     return (
-      <aside className="main-aside">
+      <aside className={"main-aside " + (this.state.menuShowing ?
+        "menu-showing"
+        :
+        "")}>
         <div className="logo">
           Get Yours
         </div>
+        <button className="show-menu-button" onClick={this.toggleMenu}>
+          {this.state.menuShowing ? "Hide Menu" : "Show Menu"}
+        </button>
         <nav className="nav">
           <ul className="link-container">
             <li className="nav-links">

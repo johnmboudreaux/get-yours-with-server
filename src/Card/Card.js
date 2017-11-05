@@ -14,7 +14,9 @@ export const Card = (props) => {
         <h3 className="prod-price">{props.price}</h3>
       </div>
       <div className="link-container2">
-        <a className="prod-link" href={props.link}>See On Amazon</a>
+        <a className="prod-link" target="_blank" href={props.link}>
+          See On Amazon
+        </a>
       </div>
     </article>
   );
