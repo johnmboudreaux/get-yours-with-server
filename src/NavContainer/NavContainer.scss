@@ -13,18 +13,26 @@
   color: #02a9ea;
   font-size: 40px;
   font-weight: bold;
-  padding: 30px 0 30px 30px;
+  padding: 30px 0 30px 20px;
 }
 
 .nav-links {
+  list-style: none;
+}
+
+.nav-links a {
   border-bottom: 1px solid #333333;
   color: #02a9ea;
+  display: block;
   font: bold 11px Arial;
   font-size: 16px;
   padding: 20px 70px 25px 35px;
-  list-style: none;
 }
 
 ul.link-container li.nav-links a {
   color: #02a9ea;
+}
+
+@media all and (max-width: 1024px) {
+
 }

@@ -1,4 +1,6 @@
 .header-div {
+  display: flex;
+  flex-wrap: nowrap;
   height: 40px;
 }
 
@@ -11,7 +13,7 @@
 .header-button {
   background-color: #02a9ea;
   font: bold 11px Arial;
-  font-size: 16px;
+  font-size: .9em;;
   height: 45px;
   width: 30%;
   margin-left: 1px;
@@ -23,8 +25,7 @@
   color: #02a9ea;
 }
 
-.baby-catalog {
-  // background-image: url('./assets/grey-cross-pattern.jpg');
+.camping-catalog{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -32,6 +33,6 @@
 }
 
 .header-div,
-.baby-catalog {
+.camping-catalog {
   background-image: url('./assets/grey-cross-pattern.jpg');
 }
