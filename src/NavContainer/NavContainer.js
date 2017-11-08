@@ -20,9 +20,7 @@ class NavContainer extends React.Component {
   render() {
     return (
       <aside className={"main-aside " + (this.state.menuShowing ?
-        "menu-showing"
-        :
-        "")}>
+        "menu-showing" : "")}>
         <div className="logo">
           Get Yours
         </div>
@@ -47,7 +45,5 @@ class NavContainer extends React.Component {
   }
 
 }
-
-NavContainer.propTypes = {};
 
 export default NavContainer;

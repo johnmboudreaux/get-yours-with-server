@@ -43,6 +43,7 @@ ShallowWrapper {
           <a
             className="prod-link"
             href={undefined}
+            target="_blank"
           >
             See On Amazon
           </a>
@@ -136,6 +137,7 @@ ShallowWrapper {
           "children": <a
             className="prod-link"
             href={undefined}
+            target="_blank"
           >
             See On Amazon
           </a>,
@@ -150,6 +152,7 @@ ShallowWrapper {
             "children": "See On Amazon",
             "className": "prod-link",
             "href": undefined,
+            "target": "_blank",
           },
           "ref": null,
           "rendered": "See On Amazon",
@@ -192,6 +195,7 @@ ShallowWrapper {
             <a
               className="prod-link"
               href={undefined}
+              target="_blank"
             >
               See On Amazon
             </a>
@@ -285,6 +289,7 @@ ShallowWrapper {
             "children": <a
               className="prod-link"
               href={undefined}
+              target="_blank"
             >
               See On Amazon
             </a>,
@@ -299,6 +304,7 @@ ShallowWrapper {
               "children": "See On Amazon",
               "className": "prod-link",
               "href": undefined,
+              "target": "_blank",
             },
             "ref": null,
             "rendered": "See On Amazon",
