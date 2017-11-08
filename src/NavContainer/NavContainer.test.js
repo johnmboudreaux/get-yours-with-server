@@ -2,7 +2,8 @@ import configureStore from 'redux-mock-store';
 import { shallow, mount } from 'enzyme';
 import NavContainer from './NavContainer';
 import React from 'react';
-import { MemoryRouter } from 'react-router';
+import { PropTypes } from 'prop-types';
+import createRouterContext from 'react-router-test-context';
 
 const middleware = [];
 const mockStore = configureStore(middleware);
@@ -17,16 +18,33 @@ describe('NavContainer snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('toggleMenu should update state', () => {
-    const search = mount(<NavContainer />);
+  it('state should update on click of button', () => {
+    const context = createRouterContext();
+    NavContainer.contextTypes = {
+      router: PropTypes.object
+    };
+    const wrapper = mount(<NavContainer />, { context });
+    const button = wrapper.find('button');
 
-    const button = search.find('button');
-
-    expect(search.state().menuShowing).toEqual(false);
+    expect(wrapper.state().menuShowing).toEqual(false);
 
     button.simulate('click');
 
-    expect(search.state().menuShowing).toEqual(true);
+    expect(wrapper.state().menuShowing).toEqual(true);
+  });
+
+  it('toggleMenu changes state', () => {
+    const context = createRouterContext();
+    NavContainer.contextTypes = {
+      router: PropTypes.object
+    };
+    const wrapper = mount(<NavContainer />, { context });
+
+    expect(wrapper.state().menuShowing).toEqual(false);
+
+    wrapper.instance().toggleMenu();
+
+    expect(wrapper.state().menuShowing).toEqual(true);
   });
 
 });
