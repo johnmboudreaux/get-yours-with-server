@@ -1,3 +1,4 @@
+/*eslint-disable */
 const recommendedProducts = require('./Server/RecommendedProducts');
 const path = require('path');
 const express = require('express');
@@ -7,7 +8,11 @@ const app = express();
 const open = require('open');
 const keys = require('./keys/apiKey');
 const amazon = require('amazon-product-api');
-const client = amazon.createClient({awsId: keys.databaseID, awsSecret: keys.databaseKey, awsTag: "jhnbdrx-20"});
+const client = amazon.createClient({
+  awsId: keys.databaseID,
+  awsSecret: keys.databaseKey,
+  awsTag: "jhnbdrx-20"
+});
 
 app.use(cors());
 
@@ -68,3 +73,4 @@ app.listen(port);
 console.log(`Listening at http://localhost:${port}`);
 
 open(`http://localhost:${port}`);
+/*eslint-enable */
