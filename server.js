@@ -14,9 +14,18 @@ const client = amazon.createClient({
   awsTag: "jhnbdrx-20"
 });
 
+const requireHTTPS = (request, response, next) => {
+  if (request.header('x-forwarded-proto') !== 'https') {
+    return response.redirect(`https://${request.header('host')}${request.url}`);
+  }
+  next();
+};
+
+if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
+
 app.use(cors());
 
-// app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 8080);
 
 const environment = process.env.NODE_ENV || 'development';
 
