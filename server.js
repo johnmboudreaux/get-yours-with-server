@@ -16,6 +16,8 @@ const client = amazon.createClient({
 
 app.use(cors());
 
+const environment = process.env.NODE_ENV || 'development';
+
 if (process.env.NODE_ENV !== 'production') {
   const webpack = require('webpack');
   const webpackDevMiddleware = require('webpack-dev-middleware');
