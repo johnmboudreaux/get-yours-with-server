@@ -9,6 +9,7 @@
     "webpack:devServer": "webpack-dev-server --open --config ./webpack.config.dev.js",
     "start": "node server.js",
     "build": "webpack --config ./webpack.config.dev.js",
+    "postinstall": "webpack --config ./webpack.config.dev.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
     "test": "jest",
