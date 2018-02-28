@@ -51,7 +51,7 @@ export class CampingCatalog extends Component {
           <button
             className="header-button"
             onClick={this.searchClick}>
-            Search Baby Products
+            Search Camping Products
           </button>
         </header>
         <div className="camping-catalog">
