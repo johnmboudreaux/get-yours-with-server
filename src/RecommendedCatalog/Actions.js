@@ -1,4 +1,4 @@
-import cleanAmazonData from './Utils/cleanAmazonData';
+import cleanAmazonData from '../Utils/CleanAmazonData';
 
 export const loadRecommendedProductSuccess = (recommendedProducts) => ({
   type: 'LOAD_RECOMMENDED_PRODUCTS',

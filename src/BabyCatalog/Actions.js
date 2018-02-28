@@ -1,4 +1,4 @@
-import cleanAmazonData from './Utils/cleanAmazonData';
+import cleanAmazonData from '../Utils/CleanAmazonData';
 
 export const loadBabyProductSuccess = (babyProducts) => ({
   type: 'LOAD_BABY_PRODUCTS',
