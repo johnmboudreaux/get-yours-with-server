@@ -3,7 +3,7 @@ const recommendedProducts = require('./Server/RecommendedProducts');
 const path = require('path');
 const express = require('express');
 const cors = require('express-cors');
-// const port = 8080;
+const port = process.env.PORT || 8080;
 const app = express();
 const open = require('open');
 const keys = require('./keys/apiKey');
@@ -16,7 +16,7 @@ const client = amazon.createClient({
 
 app.use(cors());
 
-app.set('port', process.env.PORT || 8080);
+// app.set('port', process.env.PORT || 8080);
 
 const environment = process.env.NODE_ENV || 'development';
 
