@@ -59,6 +59,7 @@
     "amazon-product-api": "^0.4.4",
     "babel-polyfill": "^6.26.0",
     "chokidar": "^1.7.0",
+    "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "express-cors": "0.0.3",
     "node-sass-chokidar": "0.0.3",

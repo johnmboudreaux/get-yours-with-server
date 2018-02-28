@@ -22,3 +22,4 @@ yarn-error.log*
 
 apiKey.js
 package-lock.json
+.env

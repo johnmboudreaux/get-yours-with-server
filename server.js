@@ -6,11 +6,10 @@ const environment = process.env.NODE_ENV || 'development';
 const cors = require('express-cors');
 const port = process.env.PORT || 8080;
 const app = express();
-const keys = require('./keys/apiKey');
 const amazon = require('amazon-product-api');
 const client = amazon.createClient({
-  awsId: keys.databaseID,
-  awsSecret: keys.databaseKey,
+  awsId: process.env.databaseID,
+  awsSecret: process.env.databaseKey,
   awsTag: "jhnbdrx-20"
 });
 
