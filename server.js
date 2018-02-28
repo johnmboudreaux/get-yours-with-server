@@ -6,7 +6,6 @@ const environment = process.env.NODE_ENV || 'development';
 const cors = require('express-cors');
 const port = process.env.PORT || 8080;
 const app = express();
-// const open = require('open');
 const keys = require('./keys/apiKey');
 const amazon = require('amazon-product-api');
 const client = amazon.createClient({
@@ -85,5 +84,4 @@ app.listen(port);
 
 console.log(`Listening at http://localhost:${port}`);
 
-// open(`http://localhost:${port}`);
 /*eslint-enable */
