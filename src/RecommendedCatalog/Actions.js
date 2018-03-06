@@ -8,9 +8,7 @@ export const loadRecommendedProductSuccess = (recommendedProducts) => ({
 export const loadRecommendedProducts = () => {
   return (dispatch) => {
     return fetch(`/api/recommended`)
-      .then(results => {
-        return results.json();
-      })
+      .then(results => results.json())
       .then(productData => {
         let cleanData = productData.length ?
           productData.map(product => cleanAmazonData(product)) : [];

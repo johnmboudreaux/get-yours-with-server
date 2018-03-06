@@ -9,7 +9,7 @@ export const loadCampingProductSuccess = (campingProducts) => {
 
 export const loadCampingProducts = (keyword) => {
   return (dispatch) => {
-    return fetch('/api?category=SportingGoods&keyword=camping ' + keyword)
+    return fetch(`/api?category=SportingGoods&keyword=camping ${keyword}`)
       .then(results => {
         return results.json();
       })

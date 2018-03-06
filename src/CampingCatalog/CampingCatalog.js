@@ -46,7 +46,7 @@ export class CampingCatalog extends Component {
           <input
             className="header-input"
             type={'text'}
-            placeholder="Search For Camping Products Here"
+            placeholder="Search For Products Here"
             onChange={this.updateInputValue}/>
           <button
             className="header-button"

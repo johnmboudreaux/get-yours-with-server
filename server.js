@@ -12,6 +12,7 @@ const client = amazon.createClient({
   awsSecret: process.env.databaseKey,
   awsTag: "jhnbdrx-20"
 });
+console.log('process', process.env);
 
 const requireHTTPS = (request, response, next) => {
   if (request.header('x-forwarded-proto') !== 'https') {
@@ -47,12 +48,13 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'www/index.html'));
 });
 
-app.get('/api', function(req, res) {
+app.get('/api', function(request, res) {
   client.itemSearch({
-    SearchIndex: req.query.category,
-    Keywords: req.query.keyword,
+    SearchIndex: request.query.category,
+    Keywords: request.query.keyword,
     responseGroup: 'ItemAttributes,Offers,Images'
   }, function(error, results, response) {
+    console.log('response:', response);
     if (error) {
       res.json(error);
     } else {
