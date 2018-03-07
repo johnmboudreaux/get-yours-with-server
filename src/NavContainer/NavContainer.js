@@ -30,6 +30,9 @@ class NavContainer extends React.Component {
         <nav className="nav">
           <ul className="link-container">
             <li className="nav-links">
+              <Link to='/'>Search Amazon</Link>
+            </li>
+            <li className="nav-links">
               <Link to='/'>Personal Recomendations</Link>
             </li>
             <li className="nav-links">

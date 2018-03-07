@@ -6,7 +6,7 @@ import * as Actions from './Actions';
 import { Card } from '../Card/Card';
 import Search from '../Search/Search';
 
-export class Recommended extends Component {
+export class AmazonSearch extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -29,8 +29,8 @@ export class Recommended extends Component {
     return (
       <div>
         <Search />
-        <div className="recommended">
-          {this.props.recommendedProducts.map(this.productMapping)}
+        <div className="searched">
+          {this.props.searchedProducts.map(this.productMapping)}
         </div>
       </div>
     );
@@ -38,14 +38,14 @@ export class Recommended extends Component {
 
 }
 
-Recommended.propTypes = {
-  recommendedProducts: PropTypes.array,
+AmazonSearch.propTypes = {
+  searchedProducts: PropTypes.array,
   actions: PropTypes.object
 };
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    recommendedProducts: state.recommendedProducts
+    searchedProducts: state.searchedProducts
   };
 };
 
@@ -55,4 +55,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Recommended);
+export default connect(mapStateToProps, mapDispatchToProps)(AmazonSearch);

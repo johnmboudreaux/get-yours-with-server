@@ -1,7 +1,7 @@
 const Reducer = (state = [], action) => {
   switch (action.type) {
-  case 'LOAD_PRODUCTS':
-    return action.products;
+  case 'LOAD_SEARCHED_PRODUCTS':
+    return action.searchedProducts;
   default:
     return state;
   }

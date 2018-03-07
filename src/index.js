@@ -10,6 +10,8 @@ import App from './App/MainApp';
 import { loadCampingProducts } from './CampingCatalog/Actions';
 import { loadBabyProducts } from './BabyCatalog/Actions';
 import { loadRecommendedProducts } from './RecommendedCatalog/Actions';
+import { loadSearchedProducts } from './AmazonSearch/Actions';
+// import { search } from './Search/Actions';
 import './index.scss';
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ &&
 window.__REDUX_DEVTOOLS_EXTENSION__();
@@ -18,6 +20,8 @@ const store = createStore(rootReducer, devTools, applyMiddleware(thunk));
 store.dispatch(loadCampingProducts());
 store.dispatch(loadBabyProducts());
 store.dispatch(loadRecommendedProducts());
+store.dispatch(loadSearchedProducts());
+// store.dispatch(search());
 
 render(
   <Provider store={store}>

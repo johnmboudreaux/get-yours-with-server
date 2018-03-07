@@ -40,7 +40,7 @@ export class BabyCatalog extends Component {
   render() {
     return (
       <div>
-        <header className="header-div">
+        {/* <header className="header-div">
           <input
             className="header-input"
             type={'text'}
@@ -51,7 +51,7 @@ export class BabyCatalog extends Component {
             onClick={this.searchClick}>
             Search Baby Products
           </button>
-        </header>
+        </header> */}
         <div className="baby-catalog">
           {this.props.babyProducts.map(this.productMapping)}
         </div>
