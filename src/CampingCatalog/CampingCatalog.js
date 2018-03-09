@@ -48,19 +48,6 @@ export class CampingCatalog extends Component {
           updateInputValue={this.updateInputValue}
           searchClick={this.searchClick}
         />
-        {/* <header className="header-div">
-          <input
-            value={this.state.inputValue}
-            className="header-input"
-            type={'text'}
-            placeholder="Search For Products Here"
-            onChange={this.updateInputValue}/>
-          <button
-            className="header-button"
-            onClick={this.searchClick}>
-            Search Camping Products
-          </button>
-        </header> */}
         <div className="camping-catalog">
           {this.props.campingProducts.map(this.productMapping)}
         </div>

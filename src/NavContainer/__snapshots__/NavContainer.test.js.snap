@@ -51,6 +51,16 @@ ShallowWrapper {
             >
               <Link
                 replace={false}
+                to="/SearchAmazon"
+              >
+                Search Amazon
+              </Link>
+            </li>
+            <li
+              className="nav-links"
+            >
+              <Link
+                replace={false}
                 to="/"
               >
                 Personal Recomendations
@@ -121,6 +131,16 @@ ShallowWrapper {
             >
               <Link
                 replace={false}
+                to="/SearchAmazon"
+              >
+                Search Amazon
+              </Link>
+            </li>
+            <li
+              className="nav-links"
+            >
+              <Link
+                replace={false}
                 to="/"
               >
                 Personal Recomendations
@@ -161,6 +181,16 @@ ShallowWrapper {
               >
                 <Link
                   replace={false}
+                  to="/SearchAmazon"
+                >
+                  Search Amazon
+                </Link>
+              </li>,
+              <li
+                className="nav-links"
+              >
+                <Link
+                  replace={false}
                   to="/"
                 >
                   Personal Recomendations
@@ -191,6 +221,35 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Link
+                  replace={false}
+                  to="/SearchAmazon"
+                >
+                  Search Amazon
+                </Link>,
+                "className": "nav-links",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Search Amazon",
+                  "replace": false,
+                  "to": "/SearchAmazon",
+                },
+                "ref": null,
+                "rendered": "Search Amazon",
+                "type": [Function],
+              },
+              "type": "li",
+            },
             Object {
               "instance": null,
               "key": null,
@@ -315,6 +374,16 @@ ShallowWrapper {
               >
                 <Link
                   replace={false}
+                  to="/SearchAmazon"
+                >
+                  Search Amazon
+                </Link>
+              </li>
+              <li
+                className="nav-links"
+              >
+                <Link
+                  replace={false}
                   to="/"
                 >
                   Personal Recomendations
@@ -385,6 +454,16 @@ ShallowWrapper {
               >
                 <Link
                   replace={false}
+                  to="/SearchAmazon"
+                >
+                  Search Amazon
+                </Link>
+              </li>
+              <li
+                className="nav-links"
+              >
+                <Link
+                  replace={false}
                   to="/"
                 >
                   Personal Recomendations
@@ -425,6 +504,16 @@ ShallowWrapper {
                 >
                   <Link
                     replace={false}
+                    to="/SearchAmazon"
+                  >
+                    Search Amazon
+                  </Link>
+                </li>,
+                <li
+                  className="nav-links"
+                >
+                  <Link
+                    replace={false}
                     to="/"
                   >
                     Personal Recomendations
@@ -455,6 +544,35 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Link
+                    replace={false}
+                    to="/SearchAmazon"
+                  >
+                    Search Amazon
+                  </Link>,
+                  "className": "nav-links",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Search Amazon",
+                    "replace": false,
+                    "to": "/SearchAmazon",
+                  },
+                  "ref": null,
+                  "rendered": "Search Amazon",
+                  "type": [Function],
+                },
+                "type": "li",
+              },
               Object {
                 "instance": null,
                 "key": null,

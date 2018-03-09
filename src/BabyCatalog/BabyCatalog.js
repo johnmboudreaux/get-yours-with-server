@@ -46,18 +46,6 @@ export class BabyCatalog extends Component {
           updateInputValue={this.updateInputValue}
           searchClick={this.searchClick}
         />
-        {/* <header className="header-div">
-          <input
-            className="header-input"
-            type={'text'}
-            placeholder="Search For Baby Products Here"
-            onChange={this.updateInputValue}/>
-          <button
-            className="header-button"
-            onClick={this.searchClick}>
-            Search Baby Products
-          </button>
-        </header> */}
         <div className="baby-catalog">
           {this.props.babyProducts.map(this.productMapping)}
         </div>

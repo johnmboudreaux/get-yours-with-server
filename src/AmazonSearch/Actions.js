@@ -12,7 +12,6 @@ export const loadSearchedProducts = (keyword) => {
         return results.json();
       })
       .then(productData => {
-        console.log(productData);
         let cleanData = productData.length ?
           productData.map(product => cleanAmazonData(product)) : [];
         dispatch(loadSearchedProductSuccess(cleanData));
