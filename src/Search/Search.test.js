@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import { Search } from './Search';
+import Search from './Search';
 import React from 'react';
 
 describe('Search snapshot', () => {

@@ -63,13 +63,11 @@ app.get('/api', function(request, res) {
 });
 
 app.get('/api/amazonSearch', (request, res) => {
-  console.log(request.query);
   client.itemSearch({
     SearchIndex: request.query.category,
     Keywords: request.query.keyword,
     responseGroup: 'ItemAttributes,Offers,Images'
   }, function(error, results, response) {
-    console.log(results);
     if (error) {
       res.json(error);
     } else {

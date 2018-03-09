@@ -28,7 +28,6 @@ export class Recommended extends Component {
   render() {
     return (
       <div>
-        <Search />
         <div className="recommended">
           {this.props.recommendedProducts.map(this.productMapping)}
         </div>

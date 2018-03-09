@@ -1,8 +1,8 @@
 import configureStore from 'redux-mock-store';
 import { shallow, mount } from 'enzyme';
-import CampingCatalogContainer, { CampingCatalog } from './CampingCatalog';
+import AmazonSearchContainer, { AmazonSearch } from './AmazonSearch';
 import * as actions from './Actions';
-import Reducer from './Reducer';
+import Reducer from './Reducers';
 import React from 'react';
 
 const middleware = [];
@@ -16,12 +16,12 @@ const initialState = {
 };
 const store = mockStore(initialState);
 
-describe('CampingCatalog', () => {
+describe('AmazonSearch', () => {
 
   it('should render an input field', () => {
 
     const search = shallow(
-      <CampingCatalogContainer  store={store} />
+      <AmazonSearchContainer  store={store} />
     );
 
     expect(search.find('.header-input')).toBeDefined();
@@ -36,50 +36,50 @@ describe('CampingCatalog', () => {
       title: "product title"
     }];
     const search = mount(
-      <CampingCatalog
-        campingProducts = {mockData}
+      <AmazonSearch
+        searchedProducts = {mockData}
       />);
-
 
     const input = search.find('input');
 
     expect(search.state().inputValue).toEqual('');
 
-    const inputValue = { target: { value: 'Fire Starter' } };
+    const inputValue = { target: { value: 'Baton Rouge' } };
 
     input.simulate('change', inputValue);
 
-    expect(search.state().inputValue).toEqual('Fire Starter');
+    expect(search.state().inputValue).toEqual('Baton Rouge');
   });
 
   it('should render an button field', () => {
-    const search = shallow(<CampingCatalogContainer store={store} />);
+    const search = shallow(<AmazonSearchContainer store={store} />);
 
     expect(search.find('.sub-btn')).toBeDefined();
   });
 
-  it('searchClick should fire an action', () => {
+  it('searchClick shold fire an action', () => {
     const actions = {
-      loadCampingProducts: jest.fn()
+      loadSearchedProducts: jest.fn()
     };
 
     const search = mount(
-      <CampingCatalog
-        campingProducts = {[]}
+      <AmazonSearch
+        searchedProducts = {[]}
         actions = {actions}
       />);
 
     const input = search.find('button');
     input.simulate('click');
-    expect(actions.loadCampingProducts).toHaveBeenCalled();
+    expect(actions.loadSearchedProducts).toHaveBeenCalled();
   });
+
 
 });
 
-describe('CampingCatalog Actions', () => {
+describe('AmazonSearch Actions', () => {
 
-  it('createBabyProduct should take and array and return an action', () => {
-    const campingProducts = [{
+  it('createSearchedProduct should take and array and return an action', () => {
+    const searchedProducts = [{
       amazonLink: "https://www.amazon.com",
       description: "prod description",
       imageURL: "https://images",
@@ -88,8 +88,8 @@ describe('CampingCatalog Actions', () => {
     }];
 
     const expected = {
-      type: 'LOAD_CAMPING_PRODUCTS',
-      campingProducts: [{
+      type: 'LOAD_SEARCHED_PRODUCTS',
+      searchedProducts: [{
         amazonLink: "https://www.amazon.com",
         description: "prod description",
         imageURL: "https://images",
@@ -98,38 +98,35 @@ describe('CampingCatalog Actions', () => {
       }]
     };
 
-    expect(actions.loadCampingProductSuccess(campingProducts))
-      .toEqual(expected);
+    expect(actions.loadSearchedProductSuccess(searchedProducts)).toEqual(expected);
   });
 
-  it('loadCampingProductSuccess should take and array and return an action',
-    () => {
-      const campingProducts = [{
+  it('loadSearchedProductSuccess should take and array and return an action', ()=>{
+    const searchedProducts = [{
+      amazonLink: "https://www.amazon.com",
+      description: "prod description",
+      imageURL: "https://images",
+      price: "$9.97",
+      title: "product title"
+    }];
+
+    const expected = {
+      type: 'LOAD_SEARCHED_PRODUCTS',
+      searchedProducts: [{
         amazonLink: "https://www.amazon.com",
         description: "prod description",
         imageURL: "https://images",
         price: "$9.97",
         title: "product title"
-      }];
+      }]
+    };
 
-      const expected = {
-        type: 'LOAD_CAMPING_PRODUCTS',
-        campingProducts: [{
-          amazonLink: "https://www.amazon.com",
-          description: "prod description",
-          imageURL: "https://images",
-          price: "$9.97",
-          title: "product title"
-        }]
-      };
+    expect(actions.loadSearchedProductSuccess(searchedProducts)).toEqual(expected);
+  });
 
-      expect(actions.loadCampingProductSuccess(campingProducts))
-        .toEqual(expected);
-    });
+  it('AmazonSearch should always match its snapshot', () => {
 
-  it('CampingCatalog should always match its snapshot', () => {
-
-    const wrapper = shallow(<CampingCatalogContainer
+    const wrapper = shallow(<AmazonSearchContainer
       store = {store}
     />);
 
@@ -138,7 +135,7 @@ describe('CampingCatalog Actions', () => {
 
 });
 
-describe('CampingCatalog reducers', () => {
+describe('AmazonSearch reducers', () => {
 
   it('Reducer should set default state', () => {
     const expectation = [];
@@ -146,10 +143,10 @@ describe('CampingCatalog reducers', () => {
     expect(Reducer(undefined, {})).toEqual(expectation);
   });
 
-  it('CREATE_CAMPING_PRODUCTS should add campingProducts to state', () => {
+  it('LOAD_SEARCHED_PRODUCT should add searchedProducts to state', () => {
     const action = {
-      type: 'LOAD_CAMPING_PRODUCTS',
-      campingProducts: [{
+      type: 'LOAD_SEARCHED_PRODUCTS',
+      searchedProducts: [{
         amazonLink: "https://www.amazon.com",
         description: "product description",
         imageURL: "https://images",
@@ -157,7 +154,7 @@ describe('CampingCatalog reducers', () => {
         title: 'product title'
       }]
     };
-    const expectation = action.campingProducts;
+    const expectation = action.searchedProducts;
 
     expect(Reducer(undefined, action)).toEqual(expectation);
   });

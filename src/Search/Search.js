@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Search = ({ inputValue, updateInputValue, searchClick }) => {
+const Search = ({ inputValue, updateInputValue, searchClick }) => {
   return (
     <header className="header-div">
       <input
@@ -24,3 +24,5 @@ Search.propTypes = {
   updateInputValue: PropTypes.func,
   searchClick: PropTypes.func
 };
+
+export default Search;
