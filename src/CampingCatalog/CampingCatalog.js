@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as Actions from './Actions';
 import { Card } from '../Card/Card';
+import Search from '../Search/Search';
 
 export class CampingCatalog extends Component {
 
@@ -42,8 +43,14 @@ export class CampingCatalog extends Component {
   render() {
     return (
       <div>
-        <header className="header-div">
+        <Search
+          inputValue={this.state.inputValue}
+          updateInputValue={this.updateInputValue}
+          searchClick={this.searchClick}
+        />
+        {/* <header className="header-div">
           <input
+            value={this.state.inputValue}
             className="header-input"
             type={'text'}
             placeholder="Search For Products Here"
@@ -53,7 +60,7 @@ export class CampingCatalog extends Component {
             onClick={this.searchClick}>
             Search Camping Products
           </button>
-        </header>
+        </header> */}
         <div className="camping-catalog">
           {this.props.campingProducts.map(this.productMapping)}
         </div>

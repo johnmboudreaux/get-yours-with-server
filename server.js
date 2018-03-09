@@ -2,6 +2,7 @@
 const recommendedProducts = require('./Server/RecommendedProducts');
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
 const environment = process.env.NODE_ENV || 'development';
 const cors = require('express-cors');
 const port = process.env.PORT || 8080;
@@ -12,7 +13,6 @@ const client = amazon.createClient({
   awsSecret: process.env.databaseKey,
   awsTag: "jhnbdrx-20"
 });
-console.log('process', process.env);
 
 const requireHTTPS = (request, response, next) => {
   if (request.header('x-forwarded-proto') !== 'https') {
@@ -54,7 +54,6 @@ app.get('/api', function(request, res) {
     Keywords: request.query.keyword,
     responseGroup: 'ItemAttributes,Offers,Images'
   }, function(error, results, response) {
-    console.log('response:', response);
     if (error) {
       res.json(error);
     } else {
@@ -62,6 +61,22 @@ app.get('/api', function(request, res) {
     }
   });
 });
+
+app.get('/api/amazonSearch', (request, res) => {
+  console.log(request.query);
+  client.itemSearch({
+    SearchIndex: request.query.category,
+    Keywords: request.query.keyword,
+    responseGroup: 'ItemAttributes,Offers,Images'
+  }, function(error, results, response) {
+    console.log(results);
+    if (error) {
+      res.json(error);
+    } else {
+      res.json(results);
+    }
+  })
+})
 
 app.get('/api/recommended', function(req, res) {
   client.itemLookup({

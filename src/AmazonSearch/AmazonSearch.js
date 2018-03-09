@@ -10,6 +10,22 @@ export class AmazonSearch extends Component {
 
   constructor(props, context) {
     super(props, context);
+    this.state = {
+      inputValue: ""
+    };
+    this.updateInputValue = this.updateInputValue.bind(this);
+    this.searchClick = this.searchClick.bind(this);
+  }
+
+
+  updateInputValue(event) {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+
+  searchClick() {
+    return this.props.actions.loadSearchedProducts(this.state.inputValue);
   }
 
   productMapping(product, index) {
@@ -28,7 +44,11 @@ export class AmazonSearch extends Component {
   render() {
     return (
       <div>
-        <Search />
+        <Search
+          inputValue={this.state.inputValue}
+          updateInputValue={this.updateInputValue}
+          searchClick={this.searchClick}
+        />
         <div className="searched">
           {this.props.searchedProducts.map(this.productMapping)}
         </div>

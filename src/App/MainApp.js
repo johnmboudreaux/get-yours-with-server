@@ -4,6 +4,7 @@ import Recommended from "../RecommendedCatalog/Recommended";
 import NavContainer from "../NavContainer/NavContainer";
 import CampingCatalog from "../CampingCatalog/CampingCatalog";
 import BabyCatalog from "../BabyCatalog/BabyCatalog";
+import AmazonSearch from "../AmazonSearch/AmazonSearch";
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
         <Route exact path={'/'} component={Recommended}></Route>
         <Route path={'/Camping'} component={CampingCatalog}></Route>
         <Route path={'/Baby'} component={BabyCatalog}></Route>
+        <Route path={'/SearchAmazon'} component={AmazonSearch}></Route>
       </div>
     );
   }

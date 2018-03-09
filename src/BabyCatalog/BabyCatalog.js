@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as Actions from './Actions';
 import { Card } from '../Card/Card';
+import Search from '../Search/Search';
 
 export class BabyCatalog extends Component {
 
@@ -40,6 +41,11 @@ export class BabyCatalog extends Component {
   render() {
     return (
       <div>
+        <Search
+          inputValue={this.state.inputValue}
+          updateInputValue={this.updateInputValue}
+          searchClick={this.searchClick}
+        />
         {/* <header className="header-div">
           <input
             className="header-input"

@@ -7,12 +7,16 @@ export const loadSearchedProductSuccess = (searchedProducts) => ({
 
 export const loadSearchedProducts = (keyword) => {
   return (dispatch) => {
-    return fetch(`/api?category=All&keyword=TopSellers ${keyword}`)
-      .then(results => results.json())
+    return fetch(`/api/amazonSearch?category=All&keyword=${keyword}`)
+      .then((results) => {
+        return results.json();
+      })
       .then(productData => {
+        console.log(productData);
         let cleanData = productData.length ?
           productData.map(product => cleanAmazonData(product)) : [];
         dispatch(loadSearchedProductSuccess(cleanData));
-      });
+      })
+      .catch(error => error);
   };
 };

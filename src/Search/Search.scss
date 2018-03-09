@@ -1,0 +1,26 @@
+.header-div {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 40px;
+}
+
+.header-input {
+  font-size: .90em;
+  height: 40px;
+  width: 69%;
+}
+
+.header-button {
+  background-color: #02a9ea;
+  font: bold 11px Arial;
+  font-size: .9em;;
+  height: 45px;
+  width: 30%;
+  margin-left: 1px;
+}
+
+.header-button:focus,
+.header-button:hover {
+  background-color: #171b1e;
+  color: #02a9ea;
+}
